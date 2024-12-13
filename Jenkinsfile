@@ -94,8 +94,8 @@ pipeline {
                         script {
                             sh "${GRADLE_PATH} clean jacocoTestReport"
                 
-                            def coverageHtmlDir = 'app//build/reports/coverage/debug'
-                            def coverageExecFile = 'app/build/jacoco/test.exec'
+                            def coverageHtmlDir = 'app/build/reports/jacoco/jacocoTestReport/html'
+                            def coverageExecFile = 'app/build/jacoco/testDebugUnitTest.exec'
                 
                             echo "Checking for coverage files..."
                             if (fileExists(coverageExecFile)) {
