@@ -122,6 +122,11 @@ pipeline {
             steps {
                 sh "${GRADLE_PATH} assembleRelease"
             }
+            post {
+                always {
+                    archiveArtifacts artifacts: "app/build/outputs/apk/release/*.apk", fingerprint: true
+                }
+            }
         }
     }
 
